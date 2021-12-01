@@ -1,6 +1,6 @@
 # ☃️ Advent of code 2021 ☃️
 Helping santa understand ✨python✨
-```c++
+```assembly
    ❄️             ❄️         ❄️         ✨  ❄️     ❄️       .-----.    ✨               ✨
          ❄️             ❄️         ❄️          ❄️         ( #-...'`\              ❄️
                 ❄️            ❄️                   ❄️     \ #     |
