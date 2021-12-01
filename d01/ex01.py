@@ -26,12 +26,5 @@
 #                                                                              #
 # **************************************************************************** #
 
-def sum_group(lines, i):
-	return int(lines[i]) + int(lines[i + 1]) + int(lines[i + 2])
-
-lines = open("d01.input").read().split("\n")
-inc = 0
-for i in range(len(lines) - 3):
-	if sum_group(lines, i) < sum_group(lines, i + 1):
-		inc += 1
-print("incremented: " + str(inc) + " times")
+nb = [int(x) for x in open("d01.input").read().split()]
+print("incremented:", sum(map(lambda x,y:x<y, nb, nb[3:])), "times")

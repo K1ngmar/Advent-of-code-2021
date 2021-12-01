@@ -26,9 +26,5 @@
 #                                                                              #
 # **************************************************************************** #
 
-lines = open("d01.input").read().split("\n")
-inc = 0
-for i in range(len(lines) - 1):
-	if int(lines[i]) < int(lines[i + 1]):
-		inc += 1
-print("incremented: " + str(inc) + " times")
+nb = [int(x) for x in open("d01.input").read().split()]
+print("incremented:", sum(map((lambda x,y:x<y), nb, nb[1:])), "times")
