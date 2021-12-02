@@ -26,16 +26,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-lines = open("d02.input").read().split()
-
-pos = 0
-depth = 0
-
-for i in range(len(lines)):
-	if lines[i] == "forward":
-		pos += int(lines[i + 1])
-	elif lines[i] == "up":
-		depth -= int(lines[i + 1])
-	elif lines[i] == "down":
-		depth += int(lines[i + 1])
-print(depth * pos)
+a={'f':0,'u':0,'d':0}
+for x in open("i"):
+	c,n=x.split()
+	a[c[0]]+=int(n)
+print(a['f']*(a['d']-a['u']))
