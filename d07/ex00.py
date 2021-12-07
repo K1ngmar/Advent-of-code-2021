@@ -26,13 +26,6 @@
 #                                                                              #
 # **************************************************************************** #
 	
-crabby_positions = [int(x) for x in open("d07.input").read().split(",")]
-
-min_pos = min(crabby_positions)
-max_pos = max(crabby_positions)
-
-answers = dict()
-for i in range(min_pos, max_pos):
-	answers[sum(map(lambda x:abs(x - i), crabby_positions))] = i 
-
-print(min(answers))
+p=[int(x) for x in open("i").read().split(",")]
+p.sort()
+print(sum(map(lambda x:abs(p[int(len(p)/2)]-x),p)))
