@@ -27,16 +27,13 @@
 # **************************************************************************** #
 
 lines = open("d03.input").read().split()
-l2 = lines
+l2 = lines.copy()
 
 for i in range(len(lines[0])):
-	b = str(int(sum(map((lambda x:x[i]=="1"), lines)) >= len(lines) / 2))
-	lines = [l for l in lines if l[i] == b]
-
-for i in range(len(l2[0])):
-	if len(l2) == 1:
-		break
-	b = str(int(sum(map((lambda x:x[i]=="1"), l2)) >= len(l2) / 2))
-	l2 = [l for l in l2 if l[i] != b]
+	fuck = str(int(sum(map((lambda x:x[i]=="1"), lines)) >= len(lines) / 2))
+	lines = [l for l in lines if l[i] == fuck]
+	if len(l2) > 1:
+		no = str(int(sum(map((lambda x:x[i]=="1"), l2)) >= len(l2) / 2))
+		l2 = [l for l in l2 if l[i] != no]
 
 print(int(lines[0], 2) * int(l2[0], 2))
