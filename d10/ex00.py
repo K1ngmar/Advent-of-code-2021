@@ -26,21 +26,14 @@
 #                                                                              #
 # **************************************************************************** #
 
-lines = [x for x in open("d10.input").read().split()]
-
-matches = {'(':')', '[':']', '{':'}', '<':'>'}
-rating = {')':3, ']':57, '}':1197, '>':25137}
-
-score = 0
-stack = []
-for line in lines:
-	for c in line:
-		if c in matches:
-			stack.append(c)
-		elif matches[stack[len(stack) - 1]] != c:
-			score += rating[c]
-			break
-		else:
-			stack.pop()
-
-print(score)
+m=")]}>"
+f="([{<\n"
+u=[3,57,1197,25137]
+n=0
+s=[]
+for l in open("i"):
+	for c in l:
+		if c in f:s+=c
+		elif m[f.index(s[-1])]!=c:n+=u[m.index(c)];break
+		else:s.pop()
+print(n)
